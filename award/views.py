@@ -5,6 +5,9 @@ from django.http  import HttpResponse,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .models import Profile,User
 from .forms import UpdateProfile
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProfileSerializer
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def welcome(request):
@@ -43,5 +46,12 @@ def updateProfile(request):
             form=UpdateProfile()
 
     return render(request,'all-views/update.html',{"form":form})
+
+class ProfileList(APIView):
+
+    def get(self, request, format=None):
+        all_merch = Profile.objects.all()
+        serializers = ProfileSerializer(all_merch, many=True)
+        return Response(serializers.data)
 
 

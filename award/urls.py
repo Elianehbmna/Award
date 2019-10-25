@@ -7,6 +7,7 @@ urlpatterns=[
     url(r'^$',views.welcome,name = 'welcome'),
     url(r'^profile/(\d+)',views.profile,name = 'profile'),
     url(r'^updateProfile',views.updateProfile,name = 'updateProfile'),
+    url(r'^api/profile/$', views.ProfileList.as_view(),name='profileApi')
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

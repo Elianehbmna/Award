@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'award',
     'bootstrap3',
     # 'award.apps.AwardConfig',
