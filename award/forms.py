@@ -1,4 +1,5 @@
 from .models import Profile
+from django import forms
 
 class UpdateProfile(forms.ModelForm):
     class Meta:

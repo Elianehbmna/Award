@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from .models import Profile
+from .models import Profile,User
 from .forms import UpdateProfile
 # Create your views here.
 @login_required(login_url='/accounts/login/')
