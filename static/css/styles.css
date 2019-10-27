@@ -1,0 +1,158 @@
+#award {
+    font-family: "Hoefler Titling A",
+        "Hoefler Titling B",
+        "Times New Roman",
+        "Times",
+        serif;
+}
+
+/* Root styling */
+:root {
+    --dark-grey: white;
+    
+    --submit-button: #49c5b6;
+    --light-grey: black;
+    --border-light: rgb(58, 58, 58);
+}
+.md-icon {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+.btn-blue {
+    background-color: var(--submit-button);
+}
+.txt-lightgrey {
+    color: var(--light-grey);
+    font-size: 16px;
+}
+
+/* navbar styling */
+
+.nav-border {
+    color: var(--border-light)
+}
+
+.lan {
+    letter-spacing: -0.03rem;
+    text-decoration: underline var(--light-grey);
+}
+
+.nav {
+    background-color: var(--dark-grey);
+    height: 70px;
+}
+
+.title {
+    font-size: 32px !important;
+    left: 50vw;
+}
+
+@keyframes dark-fadein {
+    from {
+        background-color: rgba(2, 2, 2, 0.8);
+    }
+
+    to {
+        background-color: rgba(2, 2, 2, 0.9);
+    }
+}
+
+@keyframes dark-fadeout {
+    from {
+        background-color: rgba(2, 2, 2, 0.9);
+    }
+
+    to {
+        background-color: rgba(2, 2, 2, 0.8);
+    }
+}
+
+@keyframes sitefadein {
+    0% {
+        background-color: rgba(2, 2, 2, 0);
+        opacity: 0;
+    }
+
+    100% {
+        background-color: rgba(2, 2, 2, 0.8);
+        opacity: 1;
+    }
+}
+
+@keyframes sitefadeout {
+    0% {
+        background-color: rgba(2, 2, 2, 0.8);
+        opacity: 1;
+    }
+
+    100% {
+        background-color: rgba(2, 2, 2, 0);
+        opacity: 0;
+    }
+}
+
+/* *****  End of Navigation Bars  ***** */
+
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: white; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+  
+  /* The sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s; /* If you want a transition effect */
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }

@@ -17,15 +17,11 @@ class Profile(models.Model):
     def __str__(self):
         return self.user
 
-    # @classmethod
-    # def search_by_name(cls,search_term):
-    #     news = cls.objects.filter(user__username__icontains = search_term)
-    #     return news
 
 class Project(models.Model):
     image = models.ImageField(upload_to='landingpage/', blank=True)
-    ProjectName = models.CharField(max_length =30)
-    description= models.TextField(max_length =30)
+    projectName = models.CharField(max_length =30)
+    description= models.TextField(max_length =300)
     link=models.CharField(max_length=40)
     screenshot1=models.ImageField(upload_to='screenshots/', blank=True)
     screenshot2=models.ImageField(upload_to='screenshots/', blank=True)
@@ -33,11 +29,21 @@ class Project(models.Model):
     design=models.IntegerField(blank=True,default=0)
     usability=models.IntegerField(blank=True,default=0)
     content=models.IntegerField(blank=True,default=0)
+    overall_score = models.IntegerField(blank=True,default=0)
     post_date = models.DateTimeField(auto_now_add=True)
     avatar = models.ImageField(upload_to='avatars/')
-    profile= models.ForeignKey(User)
+    profile= models.ForeignKey(User,on_delete=models.CASCADE)
     user_profile=models.ForeignKey(Profile)
     likes=models.ManyToManyField(User,related_name = 'likes',blank=True)
+
+    def __str__(self):
+        return self.projectName
+ 
+    
+    @classmethod
+    def search_by_projectname(cls,search_term):
+        name = cls.objects.filter(projectName__icontains = search_term)
+        return name
 
     @classmethod
     def save_image(self):
@@ -56,4 +62,5 @@ class Rating(models.Model):
     content = models.IntegerField(blank=True,default=0)
     overall_score = models.IntegerField(blank=True,default=0)
     project = models.ForeignKey(Project,on_delete=models.CASCADE)
-    profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
+    profiles = models.ForeignKey(Profile,on_delete=models.CASCADE)
+    
