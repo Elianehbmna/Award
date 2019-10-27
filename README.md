@@ -7,7 +7,7 @@ an application where people share their projects so they can be voted
 
 
 ## Link to Live Site 
-
+https://awaaards.herokuapp.com/
 ## Installation Requirements
   Clone this repository and navigate to the folder.
   Run the following commands to allow functionality of the app:-
