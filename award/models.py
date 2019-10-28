@@ -51,10 +51,7 @@ class Project(models.Model):
     @classmethod
     def delete_image(self):
         self.delete()
-    @classmethod
-    def update_caption(cls,id,caption):
-        captions=cls.objects.filter(caption_id=id).update(image_caption = caption)
-        return captions
+    
 
 class Rating(models.Model):
     design = models.IntegerField(blank=True,default=0)

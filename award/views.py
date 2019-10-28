@@ -121,7 +121,7 @@ def site(request,site_id):
     print(design)
     for rate in design:
         total_design+=rate
-    print(total_design)
+    
 
     for rate in usability:
         total_usability+=rate
@@ -129,11 +129,11 @@ def site(request,site_id):
 
     for rate in content:
         total_content+=rate
-    print(total_content)
+    
 
     overall_score=(total_design+total_content+total_usability)/4
 
-    print(overall_score)
+    
 
     project.design = total_design
     project.usability = total_usability
