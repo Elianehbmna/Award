@@ -19,8 +19,8 @@ from .serializer import ProfileSerializer,ProjectSerializer
 @login_required(login_url='/accounts/login/')
 def welcome(request):
     date = dt.date.today()
-    winners=Project.objects.all()[:4]
-    caraousel = Project.objects.order_by('-overall_score')[0]
+    winners=Project.objects.all()
+    caraousel = Project.objects.order_by('-overall_score')
     nominees=Project.objects.all()
     
     resources=Project.objects.all()
